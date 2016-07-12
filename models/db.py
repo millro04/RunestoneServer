@@ -229,8 +229,8 @@ auth.settings.login_form = ExtendedLoginForm(auth, janrain_form) # uncomment thi
 request.janrain_form = janrain_form # save the form so that it can be added to the user/register controller
 
 db.define_table('user_courses',
-                Field('user_id', 'string'),
-                Field('course_id', 'string'),
+                Field('user_id', db.auth_user),
+                Field('course_id', db.courses),
                 migrate='runestone_user_courses.table')
 
 #########################################################################
